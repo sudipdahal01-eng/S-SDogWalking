@@ -1,0 +1,89 @@
+/* Modern, simple styles */
+:root{
+  --bg:#fff;
+  --text:#1a1a1a;
+  --muted:#5b5b5b;
+  --brand:#ff7d7d;
+  --brand-700:#e45e5e;
+  --card:#f8f8f9;
+  --alt:#fff5f5;
+  --radius:16px;
+  --shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;color:var(--text);background:var(--bg)}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.grid{display:grid;gap:32px;grid-template-columns:1.1fr 0.9fr}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+h1,h2,h3{line-height:1.2;margin:0 0 12px}
+h1{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em}
+h2{font-size:clamp(22px,3vw,32px)}
+h3{font-size:20px}
+p{margin:0 0 10px;color:var(--muted)}
+
+/* top contact bar */
+.topbar{background:#111;color:#fff;font-size:14px}
+.topbar .container{display:flex;gap:10px;align-items:center;justify-content:center;padding:8px 20px}
+.topbar a{color:#fff;text-decoration:none}
+.topbar .dot{opacity:.6}
+
+/* sticky header */
+.site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #eee}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{font-weight:700;color:var(--text);text-decoration:none}
+.nav a{text-decoration:none;color:var(--text);margin-left:16px;font-weight:500}
+.nav .cta{padding:10px 14px;background:var(--brand);color:#fff;border-radius:999px}
+.nav .cta:hover{background:var(--brand-700)}
+
+/* anchor offset for sticky header */
+section{scroll-margin-top:90px}
+
+.hero{padding:64px 0}
+.hero-text p{max-width:50ch}
+.hero-media img{width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;border:1px solid #ddd;font-weight:600}
+.btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+.btn.primary:hover{background:var(--brand-700)}
+.btn.ghost{background:#fff}
+
+.section{padding:56px 0}
+.section.alt{background:var(--alt)}
+
+/* cards */
+.cards{display:grid;gap:18px}
+.cards.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.cards.three{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid #eee;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.price{margin-top:8px;font-weight:800}
+
+/* team */
+.card.person{text-align:center}
+.avatar{width:180px;height:180px;object-fit:cover;border-radius:50%;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.role{font-weight:700;color:var(--brand)}
+
+/* cta bar */
+.cta-bar{padding:36px 0;background:linear-gradient(90deg,var(--brand),var(--brand-700));color:#fff}
+.cta-bar .container{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* footer */
+.site-footer{padding:28px 0;border-top:1px solid #eee;color:var(--muted);font-size:14px;text-align:center}
+
+
+/* Larger Why choose us text */
+#why h2 {
+  font-size: clamp(26px, 3.5vw, 38px);
+}
+#why p, #why li {
+  font-size: 1.05rem;
+}
+
+/* Reduce image size on Why section */
+#why .why-media img {
+  max-width: 85%;
+  margin: 0 auto;
+  display: block;
+}
