@@ -157,3 +157,70 @@ section{scroll-margin-top:90px}
   .nav a{ padding:6px 0; }
   .nav .cta{ order:99; width:100%; text-align:center; margin-top:6px; }
 }
+
+
+/* ===== Responsive header/layout by page width ===== */
+
+/* Tablet and down: stack logo and nav; keep links inline; CTA on its own full row */
+@media (max-width: 820px){
+  .site-header .container{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    align-items: center;
+  }
+  .logo{ justify-self: start; }
+  .nav{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    align-items: center;
+    gap: 10px 16px;
+    width: 100%;
+  }
+  .nav .cta{
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    text-align: center;
+    margin-top: 2px;
+    padding: 12px 16px;
+  }
+}
+
+/* Small phones: center links; CTA full width; larger touch targets */
+@media (max-width: 480px){
+  .nav{
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+  .nav a{ padding: 8px 0; }
+  .nav .cta{ margin-top: 6px; }
+}
+
+
+/* ===== iPhone 15/16 width (~430px) fix ===== */
+@media (max-width: 460px){
+  .site-header .container{
+    display:grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+  .logo{font-size: 18px; line-height: 1.2;}
+  .nav{
+    display:grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 8px 16px;
+    align-items:center;
+    justify-content:start;
+    width:100%;
+  }
+  .nav a{font-size: 16px; padding: 6px 0;}
+  .nav .cta{
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    text-align:center;
+    padding: 12px 16px;
+    margin-top: 4px;
+  }
+}
+
